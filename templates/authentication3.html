@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Ananta Onboarding</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13a4ec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .form-select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2313a4ec' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 0.5rem center;
+      background-repeat: no-repeat;
+      background-size: 1.5em 1.5em;
+      padding-right: 2.5rem;
+    }
+    .dark .form-select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23f6f7f8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+  <div class="flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="border-b border-background-dark/10 dark:border-background-light/10">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center gap-4">
+            <div class="text-primary">
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z"></path>
+              </svg>
+            </div>
+            <h1 class="text-xl font-bold text-background-dark dark:text-background-light">Ananta</h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div class="w-full max-w-lg space-y-8">
+        
+        <!-- Progress -->
+        <div class="flex flex-col items-center">
+          <div class="w-full px-4 sm:px-0">
+            <div class="flex justify-between mb-1">
+              <span class="text-sm font-medium text-background-dark/60 dark:text-background-light/60">Step 3 of 3</span>
+            </div>
+            <div class="w-full bg-background-dark/10 dark:bg-background-light/10 rounded-full h-2">
+              <div class="bg-primary h-2 rounded-full" style="width: 100%;"></div>
+            </div>
+          </div>
+          <div class="text-center mt-8">
+            <h2 class="text-3xl font-extrabold text-background-dark dark:text-background-light">Customize Your Experience</h2>
+            <p class="mt-2 text-sm text-background-dark/60 dark:text-background-light/60">Set your language and support preferences.</p>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form class="mt-8 space-y-6">
+          <div class="rounded-lg shadow-sm bg-background-light/50 dark:bg-background-dark/50 p-6">
+            <div class="space-y-6">
+              
+              <!-- Language -->
+              <div>
+                <label for="language" class="block text-sm font-medium text-background-dark dark:text-background-light">Preferred Language</label>
+                <select id="language" name="language"
+                  class="form-select mt-1 block w-full appearance-none rounded-lg border border-background-dark/20 dark:border-background-light/20 bg-background-light dark:bg-background-dark px-3 py-3 text-background-dark dark:text-background-light focus:outline-none focus:ring-primary focus:border-primary sm:text-sm">
+                  <option>English</option>
+                  <option>Spanish</option>
+                  <option>French</option>
+                  <option>German</option>
+                </select>
+              </div>
+
+              <!-- Support Hours -->
+              <div>
+                <h3 class="text-sm font-medium text-background-dark dark:text-background-light">Support Hours</h3>
+                <p class="text-xs text-background-dark/60 dark:text-background-light/60">Choose the times you're available for support.</p>
+                <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="start-time" class="block text-sm font-medium text-background-dark dark:text-background-light">Start Time</label>
+                    <select id="start-time" name="start-time"
+                      class="form-select mt-1 block w-full appearance-none rounded-lg border border-background-dark/20 dark:border-background-light/20 bg-background-light dark:bg-background-dark px-3 py-3 text-background-dark dark:text-background-light focus:outline-none focus:ring-primary focus:border-primary sm:text-sm">
+                      <option>9:00 AM</option>
+                      <option>10:00 AM</option>
+                      <option>11:00 AM</option>
+                      <option>12:00 PM</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="end-time" class="block text-sm font-medium text-background-dark dark:text-background-light">End Time</label>
+                    <select id="end-time" name="end-time"
+                      class="form-select mt-1 block w-full appearance-none rounded-lg border border-background-dark/20 dark:border-background-light/20 bg-background-light dark:bg-background-dark px-3 py-3 text-background-dark dark:text-background-light focus:outline-none focus:ring-primary focus:border-primary sm:text-sm">
+                      <option>5:00 PM</option>
+                      <option>6:00 PM</option>
+                      <option>7:00 PM</option>
+                      <option>8:00 PM</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Finish Button -->
+          <div>
+            <button id="finishBtn" type="button"
+              class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+              Finish
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <!-- Redirect Script -->
+  <script>
+    document.getElementById('finishBtn').addEventListener('click', () => {
+      window.location.href = "dashboard.html";
+    });
+  </script>
+</body>
+</html>

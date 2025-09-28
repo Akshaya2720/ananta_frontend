@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ananta Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13a4ec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"
+          },
+        },
+      },
+    }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+  input[type="checkbox"]:checked + span + span + div {
+    background-color: #13a4ec;
+    border-color: #13a4ec;
+  }
+  input[type="checkbox"]:checked + span + span + div > svg {
+    display: block;
+  }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-gray-700/50">
+    <div class="flex items-center gap-2">
+      <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+      </svg>
+      <h1 class="text-xl font-bold text-gray-900 dark:text-white">Ananta</h1>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="w-full max-w-lg space-y-8">
+
+      <!-- Progress -->
+      <div>
+        <div class="flex justify-between items-center mb-2">
+          <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Step 1 of 3</p>
+        </div>
+        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+          <div class="bg-primary h-2 rounded-full" style="width: 33.33%"></div>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <div class="text-center">
+        <h2 class="mt-6 text-3xl font-extrabold text-gray-900 dark:text-white">What are your academic goals?</h2>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Select one or more goals to help us personalize your experience.</p>
+      </div>
+
+      <!-- Form -->
+      <form class="mt-8 space-y-6">
+        <div class="space-y-4">
+
+          <!-- Option 1 -->
+          <label class="relative flex items-center p-4 rounded-lg border border-gray-200 dark:border-gray-700 cursor-pointer has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary has-[:checked]:bg-primary/10 dark:has-[:checked]:bg-primary/20 transition-all">
+            <input class="sr-only" name="goal" type="checkbox" value="attendance"/>
+            <span class="material-symbols-outlined text-primary mr-4">event_available</span>
+            <span class="text-lg font-medium text-gray-900 dark:text-white">Improve attendance</span>
+            <div class="absolute top-1/2 right-4 -translate-y-1/2 h-5 w-5 rounded-md border border-gray-300 dark:border-gray-600 flex items-center justify-center">
+              <svg class="h-3 w-3 fill-current text-white hidden" viewBox="0 0 20 20">
+                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"></path>
+              </svg>
+            </div>
+          </label>
+
+          <!-- Option 2 -->
+          <label class="relative flex items-center p-4 rounded-lg border border-gray-200 dark:border-gray-700 cursor-pointer has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary has-[:checked]:bg-primary/10 dark:has-[:checked]:bg-primary/20 transition-all">
+            <input class="sr-only" name="goal" type="checkbox" value="stress"/>
+            <span class="material-symbols-outlined text-primary mr-4">self_improvement</span>
+            <span class="text-lg font-medium text-gray-900 dark:text-white">Manage stress</span>
+            <div class="absolute top-1/2 right-4 -translate-y-1/2 h-5 w-5 rounded-md border border-gray-300 dark:border-gray-600 flex items-center justify-center">
+              <svg class="h-3 w-3 fill-current text-white hidden" viewBox="0 0 20 20">
+                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"></path>
+              </svg>
+            </div>
+          </label>
+
+          <!-- Option 3 -->
+          <label class="relative flex items-center p-4 rounded-lg border border-gray-200 dark:border-gray-700 cursor-pointer has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary has-[:checked]:bg-primary/10 dark:has-[:checked]:bg-primary/20 transition-all">
+            <input class="sr-only" name="goal" type="checkbox" value="assignments" checked/>
+            <span class="material-symbols-outlined text-primary mr-4">checklist</span>
+            <span class="text-lg font-medium text-gray-900 dark:text-white">Finish assignments</span>
+            <div class="absolute top-1/2 right-4 -translate-y-1/2 h-5 w-5 rounded-md border border-gray-300 dark:border-gray-600 flex items-center justify-center">
+              <svg class="h-3 w-3 fill-current text-white" viewBox="0 0 20 20">
+                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"></path>
+              </svg>
+            </div>
+          </label>
+        </div>
+
+        <!-- Next Button -->
+        <div class="flex justify-end pt-4">
+          <!-- Changed: button → anchor with href -->
+          <a href="authentication2.html" 
+             class="group relative w-full sm:w-auto flex justify-center py-3 px-6 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark">
+            Next
+          </a>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+</body>
+</html>

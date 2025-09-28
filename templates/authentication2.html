@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ananta Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13a4ec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+</script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex flex-col min-h-screen">
+<header class="flex items-center justify-between px-10 py-4 border-b border-black/10 dark:border-white/10">
+  <div class="flex items-center gap-3">
+    <div class="w-6 h-6 text-primary">
+      <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+      </svg>
+    </div>
+    <h1 class="text-xl font-bold text-black/90 dark:text-white/90">Ananta</h1>
+  </div>
+</header>
+
+<main class="flex-grow flex items-center justify-center py-12 px-4">
+  <div class="w-full max-w-lg mx-auto">
+    <div class="mb-8 text-center">
+      <p class="text-sm font-semibold text-primary">STEP 2/3</p>
+      <div class="mt-2 h-2 w-full bg-black/10 dark:bg-white/10 rounded-full">
+        <div class="h-2 bg-primary rounded-full" style="width: 66%;"></div>
+      </div>
+    </div>
+
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold text-black/90 dark:text-white/90">Data Consent</h2>
+      <p class="mt-2 text-black/60 dark:text-white/60">
+        Please review and consent to the following data usage to enhance your learning experience.
+      </p>
+    </div>
+
+    <!-- Data options -->
+    <div class="space-y-4">
+      <!-- LMS -->
+      <div class="flex items-center justify-between p-4 rounded-lg bg-white/50 dark:bg-black/20">
+        <div>
+          <h3 class="font-medium text-black/90 dark:text-white/90">LMS Data</h3>
+          <p class="text-sm text-black/60 dark:text-white/60">Access your course materials and assignments.</p>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input class="sr-only peer" type="checkbox"/>
+          <div class="w-11 h-6 bg-black/10 rounded-full peer dark:bg-white/20 
+            peer-checked:after:translate-x-full peer-checked:bg-primary 
+            after:content-[''] after:absolute after:top-[2px] after:left-[2px] 
+            after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all">
+          </div>
+        </label>
+      </div>
+
+      <!-- Attendance -->
+      <div class="flex items-center justify-between p-4 rounded-lg bg-white/50 dark:bg-black/20">
+        <div>
+          <h3 class="font-medium text-black/90 dark:text-white/90">Attendance Data</h3>
+          <p class="text-sm text-black/60 dark:text-white/60">Track your class attendance.</p>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input class="sr-only peer" type="checkbox"/>
+          <div class="w-11 h-6 bg-black/10 rounded-full peer dark:bg-white/20 
+            peer-checked:after:translate-x-full peer-checked:bg-primary 
+            after:content-[''] after:absolute after:top-[2px] after:left-[2px] 
+            after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all">
+          </div>
+        </label>
+      </div>
+
+      <!-- Grades -->
+      <div class="flex items-center justify-between p-4 rounded-lg bg-white/50 dark:bg-black/20">
+        <div>
+          <h3 class="font-medium text-black/90 dark:text-white/90">Grades Data</h3>
+          <p class="text-sm text-black/60 dark:text-white/60">View your academic performance.</p>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input class="sr-only peer" type="checkbox"/>
+          <div class="w-11 h-6 bg-black/10 rounded-full peer dark:bg-white/20 
+            peer-checked:after:translate-x-full peer-checked:bg-primary 
+            after:content-[''] after:absolute after:top-[2px] after:left-[2px] 
+            after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all">
+          </div>
+        </label>
+      </div>
+
+      <!-- Survey -->
+      <div class="flex items-center justify-between p-4 rounded-lg bg-white/50 dark:bg-black/20">
+        <div>
+          <h3 class="font-medium text-black/90 dark:text-white/90">Survey Data</h3>
+          <p class="text-sm text-black/60 dark:text-white/60">Participate in surveys to improve courses.</p>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input class="sr-only peer" type="checkbox"/>
+          <div class="w-11 h-6 bg-black/10 rounded-full peer dark:bg-white/20 
+            peer-checked:after:translate-x-full peer-checked:bg-primary 
+            after:content-[''] after:absolute after:top-[2px] after:left-[2px] 
+            after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all">
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- Next Button -->
+    <div class="mt-8">
+      <button id="nextBtn"
+        class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors duration-300">
+        Next
+      </button>
+    </div>
+  </div>
+</main>
+</div>
+
+<script>
+  // Redirect to step 3 when "Next" is clicked
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    window.location.href = "authentication3.html";
+  });
+</script>
+</body>
+</html>

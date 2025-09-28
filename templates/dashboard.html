@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ananta Student Dashboard</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13a4ec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    :root {
+      --checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27white%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');
+    }
+  </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200">
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-10 flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm px-10 py-3">
+<div class="flex items-center gap-4">
+<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-lg font-bold">Ananta</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+  <a class="text-primary" href="dashboard.html">Dashboard</a>
+  <a class="hover:text-primary transition-colors" href="task_bar.html">Tasks &amp; Rewards</a>
+  <a class="hover:text-primary transition-colors" href="labs.html">Labs</a>
+  <a class="hover:text-primary transition-colors" href="evaluat.html">Evaluate</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gray-200/50 dark:bg-gray-800/50 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3m9zHREuCxMYLfrqt6ZkbkgXtqvjRpFK4dbKAkRmRXEb3qDwKXhDwCe3j0ZryhSrxMSXrB3LBNpppdiCNo1TbdYLsP4W2sD0sdAuYMUDldcTf_dAaiH1ObcqfQrD9iAw4ve3dyXnNNiVVqeD44xA5r3B9F_WOjPRy2u5zRrMkJ6ZhBYXv_4c8p-Knlme_G1b_BGize_pPxOXAISGh4OZCq8biKuVVQ0HWFtpzwGnFoAys_2XV2MTQbJBPnikzIk68FtPfWt72MVEj");'></div>
+</div>
+</header>
+<main class="flex-grow p-6 lg:p-8">
+<div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-3">
+<div class="lg:col-span-2">
+<div class="mb-8">
+<h1 class="text-3xl font-bold tracking-tight">Welcome back, Student!</h1>
+<p class="text-gray-500 dark:text-gray-400">Here's your dashboard for today.</p>
+</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+<div class="rounded-lg bg-white dark:bg-gray-800/50 p-4 shadow-sm">
+<h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Attendance</h3>
+<p class="text-2xl font-bold">95%</p>
+</div>
+<div class="rounded-lg bg-white dark:bg-gray-800/50 p-4 shadow-sm">
+<h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Assignments Due</h3>
+<p class="text-2xl font-bold">2</p>
+</div>
+<div class="rounded-lg bg-white dark:bg-gray-800/50 p-4 shadow-sm">
+<h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Engagement</h3>
+<p class="text-2xl font-bold">5 days</p>
+</div>
+<div class="rounded-lg bg-white dark:bg-gray-800/50 p-4 shadow-sm">
+<h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Risk Status</h3>
+<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-2.5 py-0.5 text-sm font-medium text-green-800 dark:text-green-300">Low</span>
+</div>
+</div>
+<div class="rounded-lg bg-white dark:bg-gray-800/50 p-6 shadow-sm mb-8">
+<h2 class="text-xl font-bold mb-4">My Plan</h2>
+<div class="space-y-4">
+<label class="flex items-center gap-3">
+<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary" type="checkbox"/>
+<span class="flex-grow">Complete Math Assignment 3</span>
+<span class="text-sm text-gray-500 dark:text-gray-400">Due: May 12</span>
+</label>
+<label class="flex items-center gap-3">
+<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary" type="checkbox"/>
+<span class="flex-grow">Review Chemistry Notes</span>
+<span class="text-sm text-gray-500 dark:text-gray-400">Due: May 14</span>
+</label>
+<label class="flex items-center gap-3">
+<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary" type="checkbox"/>
+<span class="flex-grow">Prepare for History Quiz</span>
+<span class="text-sm text-gray-500 dark:text-gray-400">Due: May 15</span>
+</label>
+</div>
+<div class="mt-6">
+<div class="flex justify-between text-sm mb-1">
+<p class="font-medium">Overall Progress</p>
+<p>60%</p>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="rounded-lg bg-white dark:bg-gray-800/50 p-6 shadow-sm">
+<h2 class="text-xl font-bold mb-4">Motivation Meter</h2>
+<div class="flex justify-between text-sm mb-1">
+<p class="font-medium">Current Level</p>
+<p>80%</p>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 80%"></div>
+</div>
+</div>
+<div class="rounded-lg bg-white dark:bg-gray-800/50 p-6 shadow-sm">
+<h2 class="text-xl font-bold mb-4">Badges Earned</h2>
+<div class="flex -space-x-4">
+<div class="h-16 w-16 rounded-full border-2 border-white dark:border-background-dark bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBY4i4dUEM7ag9BsT2tQs_ekcbBWf7hefayiA_UMTImttEL8JW9Xn5PxP8LCEVVHNHZe-8hhvspHNLeyQb6JxZbFQ3NUy8Ih9wPCbDzKN09lqCe_8kV93JDcVqyuVu6ZzsZyWyCyxXD-xDhZ5oXwn2FPKbZTSkKzg3ehhw952mYO6SR7BpZ69Ua4JzM2Xhhmk1KZYqHfZ58VELFecEk030BWRSOIWpl_5rAzZYLWIZ20RNuENxGr9GncOBqR_90lZv-UiAfBNX1s4QC");'></div>
+<div class="h-16 w-16 rounded-full border-2 border-white dark:border-background-dark bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5ffmDVGvDni9e-KY9rAgwmU17MnF1GvuOWoultQ1vcwsJC5jkY4kN3aC6A53H-MdP9a3ofzv4YcWKgN3EFIo01Pvh_ShM23Dx2ojcrdeQwfvGmZ-op74m5hpMVCqpr44N0gnDuLRmt6NMaxytQ_puv7DO8fRG8uKvyhWWPLYZRbZkteTXpVZk_eIlKMnOMfBtpmiWRLwQLHLDOkoB0psc-vNseNbq-rXX3wDK43WYubhJMkiGx4dkTy6EgVoMbVdqgvqHCL2HhSmR");'></div>
+<div class="h-16 w-16 rounded-full border-2 border-white dark:border-background-dark bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCl3gk_oB_g9rwIt8Q4GoFpC2Y1tRTnZN9BChiTHejQzDX9Lw0JZWoftVrhnEv_9YJjpw1pqrt9jMmLtyDrWozAquilN5PXiCYncSmWBUaLJYAXyDiFu8whnN43c-TxIPiVD-Zzd3b3slut99wI85cuz0mr1gVLhhuqsKQq1JF5Qic4XrXK9t9W9l51iGFsbi_6l3d-5Ye_aiXgAUEbhMW3ncV86UQ7z1VsJwrg8QZpULfkKSOA_Vrjlcjm-llhd4z2ET85B-n1j13U");'></div>
+<a class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-dashed border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 hover:border-primary hover:text-primary transition-colors" href="task_bar.html">
+<span class="material-symbols-outlined">add</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-8">
+<div class="rounded-lg bg-white dark:bg-gray-800/50 p-6 shadow-sm">
+<h2 class="text-xl font-bold mb-2">Chatbot Dock</h2>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Get instant support and tips from our AI assistant.</p>
+<a href="chatbot.html" class="w-full flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+  <span>Chat with Ananta AI</span>
+</a>
+</div>
+<div class="rounded-lg bg-white dark:bg-gray-800/50 p-6 shadow-sm">
+<h2 class="text-xl font-bold mb-4">Timeline</h2>
+<div class="flow-root">
+<ul class="-mb-8" role="list">
+<li>
+<div class="relative pb-8">
+<span aria-hidden="true" class="absolute left-4 top-4 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-700"></span>
+<div class="relative flex space-x-3">
+<div>
+<span class="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center ring-8 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-primary text-base">lightbulb</span>
+</span>
+</div>
+<div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+<div>
+<p class="text-sm">Nudge: Don't forget your upcoming quiz.</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">2 days ago</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="relative pb-8">
+<span aria-hidden="true" class="absolute left-4 top-4 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-700"></span>
+<div class="relative flex space-x-3">
+<div>
+<span class="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center ring-8 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-primary text-base">edit_note</span>
+</span>
+</div>
+<div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+<div>
+<p class="text-sm">Mentor Note: Keep up the great work on your essays!</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">1 week ago</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="relative">
+<div class="relative flex space-x-3">
+<div>
+<span class="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center ring-8 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-primary text-base">school</span>
+</span>
+</div>
+<div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+<div>
+<p class="text-sm">Course Enrollment: You've been enrolled in 'Advanced Algebra'.</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">2 weeks ago</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

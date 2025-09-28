@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ananta - Tasks &amp; Rewards</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<style>
+    .confetti-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 100;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13a4ec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Lexend"]
+          },
+          borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative min-h-screen">
+<div class="confetti-layer"></div>
+<div class="flex flex-col min-h-screen">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-primary/20 dark:border-primary/30 px-10 py-4">
+<div class="flex items-center gap-4">
+<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-xl font-bold text-gray-900 dark:text-white">Ananta</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+  <a class="hover:text-primary transition-colors" href="dashboard.html">Dashboard</a>
+  <a class="text-primary" href="task_bar.html">Tasks &amp; Rewards</a>
+  <a class="hover:text-primary transition-colors" href="labs.html">Labs</a>
+  <a class="hover:text-primary transition-colors" href="evaluat.html">Evaluate</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-background-light dark:bg-background-dark hover:bg-primary/10 dark:hover:bg-primary/20 text-gray-600 dark:text-gray-400">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCx45JAGcqXwCPh4WPaGZ3JbDCi_CTsW4q9oMD0Wyd-Ead5BdPsPDu5VAQptf_CQa3vw-IsEKUfsiHOgCbaveZkwjsYZNKhMiS9k4MT959GqeisiGdYc1kaHpx8VjPqq-asvGh3gVkdiYC3XZdGzNeFMocEe6eOgfZ9V2pj3MssLaEKH0Yb-3BDxT-SvQagHAPa7NR_-dpN64RE-8g_zRR5qZZ35bEmvokuAup94xWYAfCWDs_ylf6YGKO0bfIwBoDcZX5ECfmGu5Z8");'></div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="max-w-4xl mx-auto">
+<header class="mb-8">
+<h1 class="text-4xl font-bold text-gray-900 dark:text-white">Tasks &amp; Rewards</h1>
+<div class="mt-4 border-b border-gray-200 dark:border-gray-700">
+<nav aria-label="Tabs" class="-mb-px flex space-x-8">
+<a class="border-primary text-primary whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" href="#">Tasks</a>
+<a class="border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" href="#">History</a>
+</nav>
+</div>
+</header>
+<section class="mb-12">
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Today's 3 Tasks</h2>
+<div class="space-y-4 bg-background-light dark:bg-background-dark p-6 rounded-lg border border-primary/20 dark:border-primary/30">
+<label class="flex items-center gap-4 p-4 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors duration-200 cursor-pointer">
+<input checked="" class="h-6 w-6 rounded border-2 border-primary/30 dark:border-primary/50 text-primary bg-transparent focus:ring-primary focus:ring-2 focus:ring-offset-0" type="checkbox"/>
+<span class="flex-grow text-gray-700 dark:text-gray-300 line-through opacity-60">Complete 30 minutes of focused study</span>
+<span class="text-sm font-bold text-primary">+5 XP</span>
+</label>
+<label class="flex items-center gap-4 p-4 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors duration-200 cursor-pointer">
+<input class="h-6 w-6 rounded border-2 border-primary/30 dark:border-primary/50 text-primary bg-transparent focus:ring-primary focus:ring-2 focus:ring-offset-0" type="checkbox"/>
+<span class="flex-grow text-gray-700 dark:text-gray-300">Attend the 10 AM study group session</span>
+<span class="text-sm font-bold text-primary">+10 XP</span>
+</label>
+<label class="flex items-center gap-4 p-4 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors duration-200 cursor-pointer">
+<input class="h-6 w-6 rounded border-2 border-primary/30 dark:border-primary/50 text-primary bg-transparent focus:ring-primary focus:ring-2 focus:ring-offset-0" type="checkbox"/>
+<span class="flex-grow text-gray-700 dark:text-gray-300">Review and summarize notes from the last lecture</span>
+<span class="text-sm font-bold text-primary">+15 XP</span>
+</label>
+</div>
+</section>
+<div class="grid md:grid-cols-2 gap-8 mb-12">
+<section>
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Weekly Missions</h2>
+<div class="bg-background-light dark:bg-background-dark p-6 rounded-lg border border-primary/20 dark:border-primary/30 space-y-4">
+<div class="flex items-center gap-4">
+<div class="flex-shrink-0 h-12 w-12 rounded-lg bg-primary/20 flex items-center justify-center">
+<svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM208,208H48V96H208V208Z"></path></svg>
+</div>
+<div class="flex-grow">
+<p class="font-semibold text-gray-800 dark:text-gray-200">Consistency is Key</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Complete all daily tasks for 5 days this week</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-full bg-primary/20 dark:bg-primary/30 rounded-full h-2.5"><div class="bg-primary h-2.5 rounded-full" style="width: 60%"></div></div>
+<p class="text-sm font-medium text-gray-700 dark:text-gray-300">3/5</p>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Streak Tracker</h2>
+<div class="bg-background-light dark:bg-background-dark p-6 rounded-lg border border-primary/20 dark:border-primary/30 flex items-center justify-between">
+<div>
+<p class="text-base font-medium text-gray-600 dark:text-gray-400">Current Streak</p>
+<p class="text-3xl font-bold text-primary">7 days</p>
+</div>
+<div class="text-primary animate-pulse">
+<svg class="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm3.144 14.829l-3.348-2.008-3.348 2.008c-.415.249-.925-.099-.832-.574l.97-4.062-3.155-2.656c-.372-.313-.173-.918.29-.974l4.133-.356 1.701-3.842c.21-.474.92-.474 1.13 0l1.701 3.842 4.133.356c.463.056.662.661.29.974l-3.155 2.656.97 4.062c.093.475-.417.823-.832.574z"></path></svg>
+</div>
+</div>
+</section>
+</div>
+<section>
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Badge Gallery</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+<div class="flex flex-col items-center text-center group">
+<div class="relative w-28 h-28">
+<div class="w-full h-full rounded-full bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTOsKovdNdSTniFRNGx-gp04NTG-zASaqtXaTX8JHLRETB58D1kTW__17eii3lIFFKdiIoqu6tqoPVLqMZpTbzF2rRVQ7hGU2-JqrkdiDyT8cW-kPCik5m_TS3hwgZx4YR17f_s0dp0WcQ8GXFBJ1p1bq1O5bbsXcmLzZpoaE6JDKcwshZtWV6Cdh8kIqgew6fas3iPfhYdw7azK0kfcb6fzLxLIX713GU80gP8boZF_rwu3Oy1ZcxrP_6NrPmFoxux0xIkRMIGYom");'></div>
+</div>
+<p class="mt-3 font-semibold text-sm text-gray-800 dark:text-gray-200">Early Riser</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Complete tasks before 9 AM for 5 days</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="relative w-28 h-28">
+<div class="w-full h-full rounded-full bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAcPDgv1sHPkFrgBPGRzapHHukDibS4Z2XLNzf9VQA2xvDbDcKgmLmCAygMBENz-aF4iszbcgP42JX3ilfXRAQcZv9YSCUcupzvMRjR5VgSMj3Scy677Hqo98HsrJvHGLoEsIz-DuG_LvyjaLqj0yTL1dJl-KgsOulDhjCs-gmQu-YjP_pfTQn1a5jFmrwgHWWitRQjJvtlJpM7LD2Tn_bTd5vjmV-WO8PKFJjmf8iudy5eX2dp0qql55faiZT3Zz6x9co0qWhRmF4Y");'></div>
+</div>
+<p class="mt-3 font-semibold text-sm text-gray-800 dark:text-gray-200">Study Buddy</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Attend 3 study group sessions</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="relative w-28 h-28">
+<div class="w-full h-full rounded-full bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRNqPEF8pFIPadU8pubHXT-g89UZZgxzM-XKb454hwHgl1IW-ACQ7-72K1bMD7xffdcg6OAOsk48paqvNOLHSgSYNHo-4138KTWxMuTqq3FT-1UO2VL4VTVDxTbEL1rYEcUzqiDv7LYjJloodmzQyI2ENYIkP6pTsRlYBFYYwF6WiC2Sx7KH0Up9V_MLj86PNKOlrF3PKPqyjwVDHb-1sEBJpj2Sz0tEGUe4tyjJ73k_9BMdTVRMQOrBTxtzThBTn9aKKaU8U6ht_t");'></div>
+</div>
+<p class="mt-3 font-semibold text-sm text-gray-800 dark:text-gray-200">Note Ninja</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Summarize notes from 5 lectures</p>
+</div>
+<div class="flex flex-col items-center text-center group opacity-50 grayscale">
+<div class="relative w-28 h-28">
+<div class="w-full h-full rounded-full bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsObGb4Z0Hw_mRyY4UdrdSnGEMyskIeVqdlTUbxJlsX2vm63EMUVQ3buUvfAiXltbLujT_zEMccTMOFSCkLK8Ms_g_UjyEli6-T2XabisWo3bpyDntcTuvL6QXG9wNkS5I52Z9MOwGb7gQGs930NOwwwQemgTCChz3a_b4gCcWivXBH09eJipyiMSr1ArYYUnxnrVr_CRlBpN4Df31SxD3b-CWqmuUk4IYxgb117gTsrth3BYoLBg5yLpGhzZvOhY23zvtwxS2tViB");'></div>
+<div class="absolute inset-0 bg-background-dark/50 rounded-full flex items-center justify-center"><svg class="h-10 w-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 15v2m-6.364-8.364l1.414 1.414M18.364 6.636l-1.414 1.414M21 12h-2M3 12H1m15.364 8.364l-1.414-1.414M6.636 18.364l1.414-1.414M12 3v2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+</div>
+<p class="mt-3 font-semibold text-sm text-gray-800 dark:text-gray-200">Focus Master</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Maintain focus for 2 hours daily</p>
+</div>
+<div class="flex flex-col items-center text-center group opacity-50 grayscale">
+<div class="relative w-28 h-28">
+<div class="w-full h-full rounded-full bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAt---Sl9jv0MFIN_qmYp46VCjZDiErxzRIQDkE6cFYQXGSndhNQyR9mzhZ9O0T4mMKenO43QUQVETR1_gYcnkwFOzbe_2k4-BCohKHrFB10oE3hkRkHCa55HWWRf6zowPTYSXIvkK31TJ00Y9Qvs_TvLDb_lS36pr2w1Y1I6kbXrwnaQBDUNIJuP9Bl9oxI-ia8HbudtQQyh7h07JWM2vOiqRVZbuRzVxXWYQpOLysiZMHUqWJZD1YOlTnNhupuib1BMDNjVRhSY2E");'></div>
+<div class="absolute inset-0 bg-background-dark/50 rounded-full flex items-center justify-center"><svg class="h-10 w-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 15v2m-6.364-8.364l1.414 1.414M18.364 6.636l-1.414 1.414M21 12h-2M3 12H1m15.364 8.364l-1.414-1.414M6.636 18.364l1.414-1.414M12 3v2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+</div>
+<p class="mt-3 font-semibold text-sm text-gray-800 dark:text-gray-200">Attendance Ace</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Attend all classes this week</p>
+</div>
+<div class="flex flex-col items-center text-center group opacity-50 grayscale">
+<div class="relative w-28 h-28">
+<div class="w-full h-full rounded-full bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVIdMRVrBPvdOXf2YYz3M6cUJkdHF8NR6NQfrhY-ucThQY3lcaWBZ2do6a7_7Hsynaf-LHqkT0o0GJJeSX9rC4koBYMddgZbpQV2k4ZjEBi8V5_2AOwadMlWR3yWXSlsRTA4E0QBdoGSLuJLFrkXextc27OXaaROgmchtT0eHWLDAeweKVZvEpWXrBMNFiGWm0LcZziC4ww9cSzNzrYz8HmY2ACj3dGotjxC37q8XUw8GVqNINvYLHEAa73E2m26ORuU8kO4otKesr");'></div>
+<div class="absolute inset-0 bg-background-dark/50 rounded-full flex items-center justify-center"><svg class="h-10 w-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 15v2m-6.364-8.364l1.414 1.414M18.364 6.636l-1.414 1.414M21 12h-2M3 12H1m15.364 8.364l-1.414-1.414M6.636 18.364l1.414-1.414M12 3v2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+</div>
+<p class="mt-3 font-semibold text-sm text-gray-800 dark:text-gray-200">Review Ranger</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Review past material for 1 hour</p>
+</div>
+</div>
+</section>
+<div class="mt-12 flex justify-end">
+<button class="bg-primary text-white font-bold text-sm py-3 px-6 rounded-lg shadow-lg hover:bg-primary/90 transition-colors duration-300" onclick="alert('Rewards redemption coming soon!')">
+              Redeem Rewards
+            </button>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

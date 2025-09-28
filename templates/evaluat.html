@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ananta Wellbeing Check-in</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13a4ec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Manrope"]
+          },
+          borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .emoji-radio-group .emoji-radio-label {
+      transition: all 0.2s ease-in-out;
+    }
+    .emoji-radio-group input:checked + .emoji-radio-label {
+      transform: scale(1.1);
+      background-color: #13a4ec;
+      border-color: #13a4ec;
+    }
+    .emoji-radio-group input:checked + .emoji-radio-label span {
+      filter: grayscale(0) !important;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#374151] dark:text-[#d1d5db]">
+<div class="flex flex-col min-h-screen">
+<header class="border-b border-black/10 dark:border-white/10">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-4 text-[#111827] dark:text-white">
+<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path></svg>
+<h2 class="text-xl font-bold">Ananta</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+ <a class="text-primary" href="dashboard.html">Dashboard</a>
+  <a class="hover:text-primary transition-colors" href="#" onclick="alert('Resources page coming soon!')">Resources</a>
+  <a class="hover:text-primary transition-colors" href="task_bar.html">Tasks &amp; Rewards</a>
+  <a class="hover:text-primary transition-colors" href="labs.html">Labs</a>
+  <a class="hover:text-primary transition-colors" href="evaluat.html">Evaluate</a>
+
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</button>
+<div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDMTMRUtn0Obwx3R_x4u2nkVoSiMf4PvC4ylQDvxg5cOPxDE_Q1VKR2t1NoQT_MMVd89riu-ni79l_jgdYI9Xsv1EooEKHJ4brCy9j0kV3r9_PNs9V4K29uMk9VWGpW0hiZP6Mqi-5OYu9YpBvCH6c4b6LQ0ozccT0RwAuF9YTio_RyGROjL0JiXiWjfBHloFEubeQMfDJdaWGePmK6SGTSdjdPk0Xt54OD83bBGNcvHBloeq902y-uzY4dOMcE1LVUNcQdDXtvPz4X");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+<div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+<div class="lg:col-span-2 space-y-10">
+<div>
+<h1 class="text-4xl font-bold text-[#111827] dark:text-white">Wellbeing Check-in</h1>
+<p class="mt-2 text-[#6b7280] dark:text-[#9ca3af]">Estimated completion time: 2 minutes</p>
+</div>
+<div class="space-y-8">
+<fieldset>
+<legend class="text-lg font-semibold text-[#111827] dark:text-white mb-4">1. How are you feeling overall today?</legend>
+<div class="flex justify-between items-center emoji-radio-group">
+<input class="sr-only" id="feeling-1" name="feeling" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="feeling-1">
+<span class="text-3xl grayscale">😥</span>
+</label>
+<input class="sr-only" id="feeling-2" name="feeling" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="feeling-2">
+<span class="text-3xl grayscale">🙁</span>
+</label>
+<input class="sr-only" id="feeling-3" name="feeling" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="feeling-3">
+<span class="text-3xl grayscale">😐</span>
+</label>
+<input class="sr-only" id="feeling-4" name="feeling" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="feeling-4">
+<span class="text-3xl grayscale">🙂</span>
+</label>
+<input checked="" class="sr-only" id="feeling-5" name="feeling" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="feeling-5">
+<span class="text-3xl grayscale">😄</span>
+</label>
+</div>
+</fieldset>
+<fieldset>
+<legend class="text-lg font-semibold text-[#111827] dark:text-white mb-4">2. How stressed are you feeling?</legend>
+<div class="flex justify-between items-center emoji-radio-group">
+<input class="sr-only" id="stress-1" name="stress" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="stress-1">
+<span class="text-3xl grayscale">🥵</span>
+</label>
+<input class="sr-only" id="stress-2" name="stress" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="stress-2">
+<span class="text-3xl grayscale">😟</span>
+</label>
+<input class="sr-only" id="stress-3" name="stress" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="stress-3">
+<span class="text-3xl grayscale">😐</span>
+</label>
+<input checked="" class="sr-only" id="stress-4" name="stress" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="stress-4">
+<span class="text-3xl grayscale">😌</span>
+</label>
+<input class="sr-only" id="stress-5" name="stress" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="stress-5">
+<span class="text-3xl grayscale">🧘</span>
+</label>
+</div>
+</fieldset>
+<fieldset>
+<legend class="text-lg font-semibold text-[#111827] dark:text-white mb-4">3. How motivated are you feeling?</legend>
+<div class="flex justify-between items-center emoji-radio-group">
+<input class="sr-only" id="motivation-1" name="motivation" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="motivation-1">
+<span class="text-3xl grayscale">📉</span>
+</label>
+<input class="sr-only" id="motivation-2" name="motivation" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="motivation-2">
+<span class="text-3xl grayscale">📉</span>
+</label>
+<input class="sr-only" id="motivation-3" name="motivation" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="motivation-3">
+<span class="text-3xl grayscale">😐</span>
+</label>
+<input class="sr-only" id="motivation-4" name="motivation" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="motivation-4">
+<span class="text-3xl grayscale">📈</span>
+</label>
+<input checked="" class="sr-only" id="motivation-5" name="motivation" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="motivation-5">
+<span class="text-3xl grayscale">🚀</span>
+</label>
+</div>
+</fieldset>
+<fieldset>
+<legend class="text-lg font-semibold text-[#111827] dark:text-white mb-4">4. How connected to others do you feel?</legend>
+<div class="flex justify-between items-center emoji-radio-group">
+<input class="sr-only" id="connected-1" name="connected" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="connected-1">
+<span class="text-3xl grayscale">👤</span>
+</label>
+<input class="sr-only" id="connected-2" name="connected" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="connected-2">
+<span class="text-3xl grayscale">👥</span>
+</label>
+<input checked="" class="sr-only" id="connected-3" name="connected" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="connected-3">
+<span class="text-3xl grayscale">🤝</span>
+</label>
+<input class="sr-only" id="connected-4" name="connected" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="connected-4">
+<span class="text-3xl grayscale">🧑‍🤝‍🧑</span>
+</label>
+<input class="sr-only" id="connected-5" name="connected" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="connected-5">
+<span class="text-3xl grayscale">👨‍👩‍👧‍👦</span>
+</label>
+</div>
+</fieldset>
+<fieldset>
+<legend class="text-lg font-semibold text-[#111827] dark:text-white mb-4">5. How satisfied are you with your academic progress?</legend>
+<div class="flex justify-between items-center emoji-radio-group">
+<input class="sr-only" id="progress-1" name="progress" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="progress-1">
+<span class="text-3xl grayscale">😫</span>
+</label>
+<input class="sr-only" id="progress-2" name="progress" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="progress-2">
+<span class="text-3xl grayscale">😕</span>
+</label>
+<input class="sr-only" id="progress-3" name="progress" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="progress-3">
+<span class="text-3xl grayscale">😐</span>
+</label>
+<input checked="" class="sr-only" id="progress-4" name="progress" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="progress-4">
+<span class="text-3xl grayscale">😊</span>
+</label>
+<input class="sr-only" id="progress-5" name="progress" type="radio"/>
+<label class="emoji-radio-label flex flex-col items-center gap-2 cursor-pointer p-4 rounded-lg border-2 border-transparent w-20 h-20 justify-center" for="progress-5">
+<span class="text-3xl grayscale">🎉</span>
+</label>
+</div>
+</fieldset>
+<div>
+<label class="text-lg font-semibold text-[#111827] dark:text-white" for="share-more">Anything else you'd like to share?</label>
+<textarea class="mt-4 w-full rounded-lg border border-black/10 dark:border-white/10 bg-white dark:bg-background-dark p-4 focus:ring-2 focus:ring-primary focus:border-primary transition-colors" id="share-more" name="share-more" placeholder="Optional - your thoughts are safe here." rows="4"></textarea>
+</div>
+</div>
+<div class="flex justify-end items-center gap-4 pt-4">
+<p class="text-sm text-[#6b7280] dark:text-[#9ca3af]">Your responses are private and secure.</p>
+<a href="dashboard.html" class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors">
+              Submit Check-in
+            </a>
+</div>
+</div>
+<aside class="lg:col-span-1 space-y-8 lg:mt-24">
+<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-sm border border-black/5 dark:border-white/10">
+<h3 class="text-lg font-bold text-[#111827] dark:text-white">Your Progress</h3>
+<p class="text-sm text-[#6b7280] dark:text-[#9ca3af] mb-4">Wellbeing Score</p>
+<div class="flex items-baseline gap-2">
+<p class="text-5xl font-bold text-[#111827] dark:text-white">75</p>
+<p class="text-sm font-medium text-green-500">+10% vs last week</p>
+</div>
+<div class="mt-6">
+<svg fill="none" height="100" viewBox="0 0 300 100" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 70 C 25 20, 50 40, 75 40 C 100 40, 125 90, 150 90 C 175 90, 200 30, 225 30 C 250 30, 275 80, 300 80" stroke="url(#lineGradient)" stroke-linecap="round" stroke-width="4"></path>
+<path d="M0 70 C 25 20, 50 40, 75 40 C 100 40, 125 90, 150 90 C 175 90, 200 30, 225 30 C 250 30, 275 80, 300 80 V 100 H 0 Z" fill="url(#areaGradient)"></path>
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" id="lineGradient" x1="0" x2="300" y1="0" y2="0">
+<stop stop-color="#13a4ec" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#13a4ec"></stop>
+</linearGradient>
+<linearGradient gradientUnits="userSpaceOnUse" id="areaGradient" x1="150" x2="150" y1="20" y2="100">
+<stop stop-color="#13a4ec" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#13a4ec" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+</svg>
+<div class="flex justify-between text-xs text-[#6b7280] dark:text-[#9ca3af] mt-1">
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+<span>Fri</span>
+<span>Sat</span>
+<span>Sun</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Ananta - Forgot Password</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13a4ec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+            "foreground-light": "#0d171b",
+            "foreground-dark": "#f6f7f8",
+            "subtle-light": "#94a3b8",
+            "subtle-dark": "#64748b",
+            "input-light": "#e7eff3",
+            "input-dark": "#1a2a33"
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
+
+  <div class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="flex items-center justify-between px-6 md:px-10 py-4 border-b border-input-light dark:border-input-dark">
+      <a class="flex items-center gap-3" href="#">
+        <svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+        </svg>
+        <span class="text-xl font-bold">Ananta</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <a class="px-4 py-2 text-sm font-bold rounded-lg bg-input-light dark:bg-input-dark hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="login.html">Log in</a>
+        <a class="px-4 py-2 text-sm font-bold rounded-lg bg-primary text-white hover:bg-opacity-90 transition-colors" href="signup.html">Sign up</a>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="flex-grow w-full flex items-center justify-center">
+      <div class="container mx-auto px-4 py-8 md:py-16">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+
+          <!-- Left Illustration -->
+          <div class="hidden md:block">
+            <img alt="Abstract illustration" class="w-full h-full object-cover rounded-lg"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc_r2K_ykpH4EcObaicTITkEGrYzUpvsNtOj1Kqty9sZVeL0Tv9_CWEnvaid7UMRilWAL1AprVxWoB7nvDLmTQsU2Vd_ylH-hNdoJwIAag5lG_4kG_a3rPPaGMXPjcr_w9ehppn2DPmfhzEpVjahfulZHRCVLkzXc4zZqAxBazAwz_uf1WNA0HRwDSofBxukor6tqx7x2RruYU06A0TlKWitp3rMTQqGyI3flk49Bf-AijDe7HxHcE2LDvefcs-BX2mDNgAgDu964Y"/>
+          </div>
+
+          <!-- Right Content -->
+          <div class="flex flex-col">
+            <div class="text-center md:text-left">
+              <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Forgot Password?</h1>
+              <p class="mt-3 text-subtle-light dark:text-subtle-dark">
+                No worries, we'll send you reset instructions.
+              </p>
+            </div>
+
+            <!-- Form -->
+            <form id="resetForm" class="mt-8 space-y-6" onsubmit="event.preventDefault(); showMessage();">
+              <div>
+                <label class="sr-only" for="email">Email address</label>
+                <input autocomplete="email" class="w-full px-4 py-3 bg-input-light dark:bg-input-dark border-2 border-transparent focus:border-primary focus:ring-0 rounded-lg placeholder-subtle-light dark:placeholder-subtle-dark"
+                       id="email" name="email" placeholder="Enter your email address" required type="email"/>
+                <p class="mt-2 text-xs text-subtle-light dark:text-subtle-dark">
+                  Enter the email associated with your Ananta account.
+                </p>
+              </div>
+              <button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="submit">
+                Send Reset Instructions
+              </button>
+            </form>
+
+            <!-- Success message (hidden at first) -->
+            <div id="messageBox" class="hidden mt-6 text-center">
+              <p class="text-green-600 font-medium">✅ Instructions sent to your email!</p>
+              <a href="verify.html" class="mt-3 inline-block text-sm text-primary hover:underline">Resend Instructions</a>
+            </div>
+
+            <!-- Back to Login -->
+            <div class="mt-6 text-center">
+              <a class="text-sm font-medium text-primary hover:underline" href="login.html">
+                Back to Log in
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- JS for showing message -->
+  <script>
+    function showMessage() {
+      document.getElementById("messageBox").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
